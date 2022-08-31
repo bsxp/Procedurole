@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CreateNewCharacter : MonoBehaviour
 {
+
+	[SerializeField]
+	public TMP_Text _StrText, _DexText, _ConText, _IntText, _WisText, _ChaText;
 
 	// Manage the user's selected character type
 	public PlayerClasses selectedCharacterType { get; private set; }
@@ -20,22 +25,17 @@ public class CreateNewCharacter : MonoBehaviour
 	public void UpdateCharacterType(int charType) {
 		this.selectedCharacterType = (PlayerClasses)charType; // upcast to character type enum
 		this.UpdateStats(charType);
-		Debug.Log(this.selectedCharacterType);
-		Debug.Log(this.Strength);
-		Debug.Log(this.Dexterity);
-		Debug.Log(this.Constitution);
-		Debug.Log(this.Intelligence);
-		Debug.Log(this.Wisdom);
-		Debug.Log(this.Charisma);
+
+		// Update display
+		this.UpdateDisplay();
 	}
 
+	// Fill out the character's stats depending on the selected class
 	private void UpdateStats(int charType) {
 
 		PlayerClasses type = (PlayerClasses)charType; // Upcast to PlayerClasses type
 
 		// Default set = 15, 14, 13, 12, 10, 8)
-
-		return;
 
 		switch (type) {
 			case PlayerClasses.barbarian: // Total:  70
@@ -121,5 +121,15 @@ public class CreateNewCharacter : MonoBehaviour
 			default:
 				break;
 		}
+	}
+
+	// Update TextMapPro objects containing text displaying the stats
+	private void UpdateDisplay() {
+		this._StrText.text = this.Strength.ToString();
+		this._DexText.text = this.Dexterity.ToString();
+		this._ConText.text = this.Constitution.ToString();
+		this._IntText.text = this.Intelligence.ToString();
+		this._WisText.text = this.Wisdom.ToString();
+		this._ChaText.text = this.Charisma.ToString();
 	}
 }
