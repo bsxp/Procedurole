@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets/Scripts/CreateNewCharacter.cs" />
      <Compile Include="Assets/Scripts/Inventory.cs" />
+     <Compile Include="Assets/Scripts/PlayerController.cs" />
      <Compile Include="Assets/Scripts/DungeonManagerPostProcessing.cs" />
      <Compile Include="Assets/Scripts/CharacterMenu.cs" />
      <Compile Include="Assets/Scripts/CharacterManager.cs" />
@@ -47,9 +48,8 @@
      <Compile Include="Assets/Scripts/Wall.cs" />
      <Compile Include="Assets/Scripts/Loader.cs" />
      <Compile Include="Assets/Scripts/HomeScreenManager.cs" />
-     <Compile Include="Assets/Scripts/Player.cs" />
-     <Compile Include="Assets/Scripts/PlayerController.cs" />
      <Compile Include="Assets/Scripts/CameraController.cs" />
+     <Compile Include="Assets/Scripts/Player.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
