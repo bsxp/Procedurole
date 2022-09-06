@@ -69,11 +69,11 @@ public class SlimeController : MonoBehaviour
 
 	// Handle collision with the player
 	private void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.name == "Player") // If the slime collides with the player
-		{
-			other.gameObject.SetActive(false); // Deactivate the player
-			reloading = true;
-			player = other.gameObject;
-		}
+		// if (other.gameObject.name == "Player") // If the slime collides with the player
+		// {
+		// 	other.gameObject.SetActive(false); // Deactivate the player
+		// 	reloading = true;
+		// 	player = other.gameObject;
+		// }
 	}
 }
