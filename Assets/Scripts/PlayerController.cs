@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
 	private bool playerMoving;
 
-	private Vector2 lastMove;
+	public Vector2 lastMove;
 
 	// All player objects inherit this
 	private static bool playerExists;
