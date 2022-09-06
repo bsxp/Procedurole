@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+		DontDestroyOnLoad(transform.gameObject);
     }
 
     // Update is called once per frame
