@@ -12417,6 +12417,10 @@ PrefabInstance:
       propertyPath: attackTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 321112025864016371, guid: 0840b98b02aea4d2d8e50b3cee3e342a, type: 3}
+      propertyPath: diagonalMoveModifier
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 321112025864016381, guid: 0840b98b02aea4d2d8e50b3cee3e342a, type: 3}
       propertyPath: m_SortingOrder
       value: 1

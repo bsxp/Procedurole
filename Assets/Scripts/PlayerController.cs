@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-	public float moveSpeed = 5;
+	public float moveSpeed = 5; 			// Player move speed
+	private float currentMoveSpeed;			// Player's current move speed, used for diagonal speed calculations
+	public float diagonalMoveModifier; 		// Calculate amplification of diagonal move speed
 
 	private Animator anim;
 	private Rigidbody2D body;
@@ -57,7 +59,7 @@ public class PlayerController : MonoBehaviour
 			if (horizontal > 0.5f || horizontal < -0.5f) // Player is pressing right or left, respectively
 			{
 				// transform.Translate(new Vector3(horizontal * moveSpeed * Time.deltaTime, 0f, 0f));
-				body.velocity = new Vector2(horizontal * moveSpeed, body.velocity.y);
+				body.velocity = new Vector2(horizontal * currentMoveSpeed, body.velocity.y);
 				playerMoving = true;
 				lastMove = new Vector2(horizontal, 0f);
 			}
@@ -65,7 +67,7 @@ public class PlayerController : MonoBehaviour
 			if (vertical > 0.5f || vertical < -0.5f) // Player is pressing right or left, respectively
 			{
 				// transform.Translate(new Vector3(0f, vertical * moveSpeed * Time.deltaTime, 0f));
-				body.velocity = new Vector2(body.velocity.x, vertical * moveSpeed);
+				body.velocity = new Vector2(body.velocity.x, vertical * currentMoveSpeed);
 				playerMoving = true;
 				lastMove = new Vector2(0f, vertical);
 			}
@@ -93,6 +95,9 @@ public class PlayerController : MonoBehaviour
 	// Handle attack damage and animations
 	void HandleAttack() {
 
+		float horizontalAbs = Mathf.Abs(Input.GetAxisRaw("Horizontal"));
+		float verticalAbs = Mathf.Abs(Input.GetAxisRaw("Vertical"));
+
 		if (Input.GetKeyDown(KeyCode.J))
 		{
 			attackTimeCounter = attackTime;
@@ -101,6 +106,14 @@ public class PlayerController : MonoBehaviour
 			body.velocity = Vector2.zero;
 
 			anim.SetBool("PlayerAttacking", true);
+		}
+
+		// Handle diagonal movement
+		if (horizontalAbs > 0.5f && verticalAbs > 0.5f)
+		{
+			currentMoveSpeed = moveSpeed * diagonalMoveModifier;
+		} else {
+			currentMoveSpeed = moveSpeed;
 		}
 
 		// Decrement remaining time
