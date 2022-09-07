@@ -14,12 +14,13 @@ public class PlayerController : MonoBehaviour
 
 	public Vector2 lastMove;
 
-	// All player objects inherit this
-	private static bool playerExists;
+	private static bool playerExists;		// All player objects inherit this
 
 	private bool attacking;
-	public float attackTime; // how long the attack lasts 
-	private float attackTimeCounter; // track attack duration
+	public float attackTime; 				// how long the attack lasts 
+	private float attackTimeCounter; 		// track attack duration
+
+	public string startPoint; 				// Player start point
 
     // Start is called before the first frame update
     void Start()
