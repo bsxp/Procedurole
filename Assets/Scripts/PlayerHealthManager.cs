@@ -58,7 +58,8 @@ public class PlayerHealthManager : MonoBehaviour
 		flashCounter = flashLength;
 	}
 
-	public void SetMaxHealth(){
+	public void SetMaxHealth()
+	{
 		playerCurrentHealth = playerMaxHealth;
 	}
 }
