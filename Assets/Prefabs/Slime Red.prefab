@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4409941373233462294}
   - component: {fileID: 4409941373233462299}
   - component: {fileID: 4457150194452361235}
+  - component: {fileID: -6893985739815101531}
   m_Layer: 0
   m_Name: Slime Red
   m_TagString: Enemy
@@ -176,3 +177,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToGive: 5
+--- !u!114 &-6893985739815101531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409941373233462293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017c9fe6127e64a49a5c16115b33ced2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaxHealth: 15
+  enemyCurrentHealth: 0
