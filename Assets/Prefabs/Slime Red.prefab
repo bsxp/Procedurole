@@ -191,3 +191,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMaxHealth: 15
   enemyCurrentHealth: 0
+  expToGive: 25

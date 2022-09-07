@@ -7,10 +7,16 @@ public class EnemyHealthManager : MonoBehaviour
     public int enemyMaxHealth;
 	public int enemyCurrentHealth;
 
+	private PlayerStats playerStats;	// Reference to player stats
+
+	public int expToGive;				// Experience the enemy will award on death
+
     // Start is called before the first frame update
     void Start()
     {
         enemyCurrentHealth = enemyMaxHealth;
+
+		playerStats = FindObjectOfType<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -19,7 +25,8 @@ public class EnemyHealthManager : MonoBehaviour
         if (enemyCurrentHealth <= 0) // enemy is out of health
 		{
 			Destroy(gameObject);
-			// .. other 0 hp handlers .. end dungeon, revive, etc.
+
+			playerStats.AddExperience(expToGive);
 		}
     }
 
