@@ -51,18 +51,8 @@ public class PlayerStats : MonoBehaviour
 
 		playerHealth.playerMaxHealth = currentHP;
 
-		Debug.Log("Before");
-		Debug.Log(playerHealth.playerCurrentHealth);
-		Debug.Log(currentHP);
-		Debug.Log(HPLevels[currentLevel - 1]);
-		Debug.Log("Difference");
-		Debug.Log((currentHP - HPLevels[currentLevel - 1]));
-
 		playerHealth.playerCurrentHealth += (currentHP - HPLevels[currentLevel - 1]);
-
-		Debug.Log("After");
-		Debug.Log(playerHealth.playerCurrentHealth);
-
+		
 		currentAttack = attackLevels[currentLevel];
 		currentDefence = defenceLevels[currentLevel];
 	}

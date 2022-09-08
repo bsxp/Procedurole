@@ -25,8 +25,6 @@ public class LoadNewArea : MonoBehaviour
     }
 
 	private void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log(other.gameObject.name);
-		Debug.Log(levelToLoad);
 		if (other.gameObject.name == "Player")
 		{
 			// Load into a new scene
