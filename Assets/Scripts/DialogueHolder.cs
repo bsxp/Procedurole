@@ -8,6 +8,8 @@ public class DialogueHolder : MonoBehaviour
 	public string dialogue;
 	private DialogueManager dManager;
 
+	public string[] dialogueLines;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,12 @@ public class DialogueHolder : MonoBehaviour
 		{
 			if (Input.GetKeyUp(KeyCode.Space))
 			{
-				dManager.ShowBox(dialogue);
+				if (!dManager.dialogueActive)
+				{
+					dManager.dialogueLines = dialogueLines;
+					dManager.currentLine = 0;
+					dManager.ShowDialogue(); // Show dialogue box if it's not already on screen
+				}
 			}
 		}
 	}
